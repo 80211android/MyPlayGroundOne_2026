@@ -6,8 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.mynewplaygroundone.ui.screens.MyScreen
-import com.example.mynewplaygroundone.ui.theme.MyNewPlaygroundOneTheme
+import com.example.mynewplaygroundone.navigation.PlaygroundNavigation
+import com.example.mynewplaygroundone.presentation.ui.theme.MyNewPlaygroundOneTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
