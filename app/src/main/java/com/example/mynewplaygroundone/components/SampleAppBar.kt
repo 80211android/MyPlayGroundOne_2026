@@ -12,13 +12,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SampleAppBar(
     title: String = "FGH Android",
     elevation: Dp = 0.dp,
-//    navController: NavController?
+//    navController: NavController
 ){
     Surface(shadowElevation = elevation) {
         TopAppBar(
