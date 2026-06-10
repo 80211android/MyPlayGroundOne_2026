@@ -1,4 +1,4 @@
-package com.example.mynewplaygroundone.ui.screens
+package com.example.mynewplaygroundone.presentation.ui.screens
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.mynewplaygroundone.components.SampleAppBar
-import com.example.mynewplaygroundone.ui.theme.MyNewPlaygroundOneTheme
+import com.example.mynewplaygroundone.presentation.ui.theme.MyNewPlaygroundOneTheme
 
 
 @Composable
