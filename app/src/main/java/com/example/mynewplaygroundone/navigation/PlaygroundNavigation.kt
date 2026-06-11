@@ -2,9 +2,12 @@ package com.example.mynewplaygroundone.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.mynewplaygroundone.data.FakePostsRepository
+import com.example.mynewplaygroundone.presentation.PlaygroundViewModel
 import com.example.mynewplaygroundone.presentation.ui.screens.MyScreen
 
 @Composable
@@ -16,9 +19,16 @@ fun PlaygroundNavigation(){
     ) {
 
         composable("posts") {
-//            val postsViewModel = hiltViewModel<PostsViewModel>()
-//            PostsScreen(navController = navController, postsViewModel = postsViewModel)
-            MyScreen()
+//            val playgroundViewModel = hiltViewModel<PlaygroundViewModel>()
+//            val playgroundViewModel: PlaygroundViewModel = viewModel()
+
+            val playgroundViewModel: PlaygroundViewModel = viewModel(
+                factory = PlaygroundViewModel.provideFactory(
+                    postsRepository = FakePostsRepository()
+                ),
+            )
+
+            MyScreen(navController = navController, playgroundViewModel = playgroundViewModel)
         }
 
     }
