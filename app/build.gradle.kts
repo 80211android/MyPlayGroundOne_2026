@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+//    alias(libs.plugins.google.dagger.hilt.android)
 }
+
 
 android {
     namespace = "com.example.mynewplaygroundone"
@@ -55,5 +57,9 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
 
+    // Dagger - Hilt
+    implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
+//    implementation(libs.androidx.lifecycle.runtime.compose.android)
+//    ksp(libs.hilt.android.compiler)
 }
