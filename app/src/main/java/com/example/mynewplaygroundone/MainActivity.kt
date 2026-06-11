@@ -8,7 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mynewplaygroundone.navigation.PlaygroundNavigation
 import com.example.mynewplaygroundone.presentation.ui.theme.MyNewPlaygroundOneTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,3 +29,4 @@ fun GreetingPreview() {
 //        Greeting("Android")
     }
 }
+
