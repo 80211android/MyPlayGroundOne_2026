@@ -1,22 +1,6 @@
 package com.example.mynewplaygroundone.presentation.ui.screens.myscaffold
 
 
-/*
- * Copyright 2023 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -60,7 +44,7 @@ import com.example.mynewplaygroundone.presentation.ui.theme.White
 @OptIn(ExperimentalMaterial3Api::class)
 // [START android_compose_components_scaffold]
 @Composable
-fun ScaffoldExample(navController: NavController) {
+fun ScaffoldExample(onClick: () -> Unit) {
     var presses by remember { mutableIntStateOf(0) }
 
     Scaffold(
@@ -83,13 +67,7 @@ fun ScaffoldExample(navController: NavController) {
 
                 Button(
                     modifier = Modifier.fillMaxSize(),
-                    onClick = {
-                        navController.navigate("myrecipe") {
-                            popUpTo(navController.graph.id) {
-                                saveState = true
-                            }
-                        }
-                    },
+                    onClick = onClick,
                     colors = ButtonColors(
                         Orange,
                         contentColor = White,
