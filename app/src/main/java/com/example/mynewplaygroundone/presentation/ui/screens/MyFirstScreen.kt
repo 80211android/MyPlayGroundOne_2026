@@ -8,12 +8,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.example.mynewplaygroundone.components.SampleAppBar
+import com.example.mynewplaygroundone.presentation.PlaygroundViewModel
 import com.example.mynewplaygroundone.presentation.ui.theme.MyNewPlaygroundOneTheme
 
 
 @Composable
-fun MyScreen() {
+fun MyScreen(navController: NavController, playgroundViewModel: PlaygroundViewModel = hiltViewModel()) {
 
     MyNewPlaygroundOneTheme {
         Scaffold(
