@@ -19,7 +19,7 @@ interface PostsRepository {
      */
     suspend fun getPostsFeed(): Result<PostsFeed>
 
-    suspend fun getFlowPostsFeed(): Flow<Result<PostsFeed>>
+    suspend fun getFlowPostsFeed(): Flow<PostsFeed>
 
 
     val flowPostsFeed: Flow<Result<PostsFeed>>
