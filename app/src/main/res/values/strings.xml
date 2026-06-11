@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyNewPlaygroundOne</string>
+
+    <string name="app_bar">Playground One</string>
 </resources>
