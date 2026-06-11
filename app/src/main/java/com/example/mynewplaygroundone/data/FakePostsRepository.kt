@@ -67,12 +67,12 @@ class FakePostsRepository : PostsRepository {
     }
 
 
-    override suspend fun getFlowPostsFeed(): Flow<Result<PostsFeed>>  {
+    override suspend fun getFlowPostsFeed(): Flow<PostsFeed>  {
 //        return postsFlowFeed.asStateFlow().collect {
 //           it
 //        }
 
-        return flow { emit(Result.Success(posts)) }
+        return flow { emit(posts) }
     }
 
     override val flowPostsFeed: Flow<Result<PostsFeed>>
