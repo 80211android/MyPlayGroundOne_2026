@@ -45,7 +45,6 @@ fun MyScreen(navController: NavController, playgroundViewModel: PlaygroundViewMo
     MyNewPlaygroundOneTheme {
         Scaffold(
             topBar = { SampleAppBar(
-//                        navController = navController,
                 elevation = 7.dp
             ) },
             modifier = Modifier.fillMaxSize()
@@ -55,8 +54,8 @@ fun MyScreen(navController: NavController, playgroundViewModel: PlaygroundViewMo
 //                            .padding(innerPadding)
                     .padding(top = innerPadding.calculateTopPadding())
                     .fillMaxSize(),
-                playgroundViewModel
-
+                playgroundViewModel,
+                navController
             )
         }
     }
@@ -66,27 +65,26 @@ fun MyScreen(navController: NavController, playgroundViewModel: PlaygroundViewMo
 @Composable
 fun PostDisplay(
     modifier: Modifier = Modifier,
-    playgroundViewModel: PlaygroundViewModel
+    playgroundViewModel: PlaygroundViewModel,
+    navController: NavController
 ) {
 
     val postsFeed by playgroundViewModel.fullPosts.collectAsStateWithLifecycle()
 
-//    val popularPosts: List<Post> = postsFeed?.popularPosts ?: emptyList<Post>()
     val popularPosts: List<Post> = postsFeed?.allPosts ?: emptyList<Post>()
-
 
     LazyColumn(modifier = modifier) {
 
         items(popularPosts) { post ->
 
-            IndiPost(post)
+            IndiPost(post, navController)
 
         }
     }
 }
 
 @Composable
-fun IndiPost(post: Post) {
+fun IndiPost(post: Post, navController: NavController) {
 
     Card(
         modifier = Modifier
@@ -98,7 +96,14 @@ fun IndiPost(post: Post) {
         colors = CardColors(
             Color.White, Color.Black, Color.White, Color.White
         ),
-        elevation = CardDefaults.cardElevation(6.dp)
+        elevation = CardDefaults.cardElevation(6.dp),
+        onClick = {
+            navController.navigate("myscaffold") {
+                popUpTo(navController.graph.id) {
+                    saveState = true
+                }
+            }
+        }
 
     ) {
         Column(
