@@ -86,19 +86,24 @@ fun ParallaxToolbar(recipe: Recipe, scrollState: LazyListState) {
     val offsetProgress = max(0f, offset * 3f - 2f * maxOffset) / maxOffset
 
 
-//    TopAppBar(
-//        colors = topAppBarColors(
-//            containerColor = White,
-//            titleContentColor = MaterialTheme.colorScheme.primary,
-//        ),
-//        title = {
-//            Text("Top app bar")
-//        },
+    TopAppBar(
+        colors = topAppBarColors(
+            containerColor = White,
+            titleContentColor = MaterialTheme.colorScheme.primary,
+        ),
+        title = {
+            Text("Top app bar")
+        },
 //        modifier = Modifier.height(
 //            AppBarExpendedHeight
 //        )
+        modifier = Modifier.height(
+            1.dp
+        )
 //            .offset { IntOffset(x = 0, y = -offset) },
-//    )
+//        expandedHeight = if (offset == maxOffset) 4.dp else 0.dp
+    )
+
 
     Box(modifier = Modifier.fillMaxSize()) {
         Column {
@@ -160,22 +165,6 @@ fun ParallaxToolbar(recipe: Recipe, scrollState: LazyListState) {
             }
         }
     }
-
-
-
-//    TopAppBar(
-////        contentPadding = PaddingValues(),
-////        backgroundColor = White,
-//        title = "The Top Bar",
-//        modifier = Modifier
-//            .height(
-//                AppBarExpendedHeight
-//            )
-//            .offset { IntOffset(x = 0, y = -offset) },
-////        elevation = if (offset == maxOffset) 4.dp else 0.dp
-//    ) {
-//
-//    }
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
