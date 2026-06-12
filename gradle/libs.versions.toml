@@ -14,6 +14,7 @@ hiltNavigationCompose = "1.2.0"
 hiltAndroid = "2.51.1"
 googleDaggerHiltAndroid = "2.51.1"
 googleDevtoolsKsp = "2.1.0-1.0.29"
+insetsAndroid = "0.17.0"
 
 
 [libraries]
@@ -32,6 +33,8 @@ androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
+
+insets = { group = "com.google.accompanist", name = "accompanist-insets", version.ref = "insetsAndroid"}
 
 #Navigation
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
