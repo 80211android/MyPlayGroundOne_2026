@@ -11,6 +11,8 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.*
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ButtonElevation
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -38,7 +40,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-//import com.google.accompanist.insets.LocalWindowInsets
+import com.google.accompanist.insets.LocalWindowInsets
 //import com.akshat.newapplication.data.Recipe
 //import com.akshat.newapplication.data.strawberryCake
 //import com.akshat.newapplication.ui.theme.NewApplicationTheme
@@ -77,35 +79,34 @@ fun ParallaxToolbar(recipe: Recipe, scrollState: LazyListState) {
 
     val maxOffset =
         with(LocalDensity.current) { imageHeight.roundToPx() } - 1000
-//    with(LocalDensity.current) { imageHeight.roundToPx() } - LocalWindowInsets.current.systemBars.layoutInsets.top
+    with(LocalDensity.current) { imageHeight.roundToPx() } - LocalWindowInsets.current.systemBars.layoutInsets.top
 
     val offset = min(scrollState.firstVisibleItemScrollOffset, maxOffset)
 
     val offsetProgress = max(0f, offset * 3f - 2f * maxOffset) / maxOffset
 
 
-    TopAppBar(
-        colors = topAppBarColors(
-            containerColor = White,
-            titleContentColor = MaterialTheme.colorScheme.primary,
-        ),
-        title = {
-            Text("Top app bar")
-        },
-//        modifier = height(
+//    TopAppBar(
+//        colors = topAppBarColors(
+//            containerColor = White,
+//            titleContentColor = MaterialTheme.colorScheme.primary,
+//        ),
+//        title = {
+//            Text("Top app bar")
+//        },
+//        modifier = Modifier.height(
 //            AppBarExpendedHeight
 //        )
 //            .offset { IntOffset(x = 0, y = -offset) },
-    )
+//    )
 
     Box(modifier = Modifier.fillMaxSize()) {
         Column {
-            Box() {
-//            Box(
-//                height(imageHeight)
-//                    .graphicsLayer {
-//                        alpha = 1f - offsetProgress
-//                    }) {
+            Box(
+                Modifier.height(imageHeight)
+                    .graphicsLayer {
+                        alpha = 1f - offsetProgress
+                    }) {
                 Image(
                     painter = painterResource(id = R.drawable.strawberry_pie_1),
                     contentDescription = null,
@@ -151,9 +152,9 @@ fun ParallaxToolbar(recipe: Recipe, scrollState: LazyListState) {
                     recipe.title,
                     fontSize = 26.sp,
                     fontWeight = Bold,
-//                    modifier = Modifier
-//                        .padding(horizontal = (16 + 28 * offsetProgress).dp)
-//                        .scale(1f - 0.25f * offsetProgress)
+                    modifier = Modifier
+                        .padding(horizontal = (16 + 28 * offsetProgress).dp)
+                        .scale(1f - 0.25f * offsetProgress)
                 )
 
             }
