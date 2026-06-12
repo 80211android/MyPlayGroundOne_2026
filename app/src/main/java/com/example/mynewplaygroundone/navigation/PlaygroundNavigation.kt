@@ -20,9 +20,9 @@ fun PlaygroundNavigation(){
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-//        startDestination = "posts",
+        startDestination = "posts",
 //        startDestination = "myrecipe",
-        startDestination = "myscaffold",
+//        startDestination = "myscaffold",
 
 
     ) {
