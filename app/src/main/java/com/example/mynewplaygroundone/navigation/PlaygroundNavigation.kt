@@ -28,14 +28,15 @@ fun PlaygroundNavigation(){
     ) {
 
         composable("posts") {
-//            val playgroundViewModel = hiltViewModel<PlaygroundViewModel>()
+            val playgroundViewModel = hiltViewModel<PlaygroundViewModel>()
+
 //            val playgroundViewModel: PlaygroundViewModel = viewModel()
 
-            val playgroundViewModel: PlaygroundViewModel = viewModel(
-                factory = PlaygroundViewModel.provideFactory(
-                    postsRepository = FakePostsRepository()
-                ),
-            )
+//            val playgroundViewModel: PlaygroundViewModel = viewModel(
+//                factory = PlaygroundViewModel.provideFactory(
+//                    postsRepository = FakePostsRepository()
+//                ),
+//            )
 
             MyScreen(navController = navController, playgroundViewModel = playgroundViewModel)
         }
