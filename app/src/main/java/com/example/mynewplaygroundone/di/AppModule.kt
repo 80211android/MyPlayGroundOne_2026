@@ -1,4 +1,4 @@
-package com.example.mynewplaygroundone.presentation.di
+package com.example.mynewplaygroundone.di
 
 import android.content.Context
 import com.example.mynewplaygroundone.data.FakePostsRepository
